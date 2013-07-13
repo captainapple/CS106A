@@ -1,0 +1,45 @@
+/* 
+ * Problem 1 Starts
+ */
+
+import stanford.karel.*;
+
+public class GetThePaper extends SuperKarel {
+    public void run() {
+        bedToPorch();
+        pickupPaper();
+        porchToBed();
+        turnAround();
+    }
+}
+
+private void diagonalRight() {
+    move()
+    turnRight()
+    move()
+    turnLeft()
+}
+
+private void diagonalLeft() {
+    move()
+    turnLeft()
+    move()
+    turnRight()
+}
+
+private void bedToPorch() {
+    diagonalRight();
+    move();
+    move();
+}
+
+private void porchToBed() {
+    turnAround();
+    bedToPorch();
+}
+
+private void pickupPaper() {
+    if (beepersPresent()) {
+        pickBeeper();
+    }
+}
